@@ -51,7 +51,11 @@ void test_au_array_is_empty()
 
 void test_au_array_length()
 {
-    assert(false);
+    au_array* empty_arr = au_array_create();
+    assert(au_array_length(empty_arr) == 0);
+
+    au_array* non_empty_arr = au_array_create_of_length(5, sizeof(int));
+    assert(au_array_length(non_empty_arr) == 5);
 }
 
 void test_au_array_size()
