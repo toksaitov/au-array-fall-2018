@@ -51,7 +51,7 @@ bool au_array_is_empty(au_array *array)
 
 size_t au_array_length(au_array *array)
 {
-    return 0;
+    return array->length;
 }
 
 size_t au_array_size(au_array *array)
