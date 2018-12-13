@@ -42,7 +42,11 @@ void test_au_array_free_with_element_handler()
 
 void test_au_array_is_empty()
 {
-    assert(false);
+    au_array* empty_arr = au_array_create();
+    assert(au_array_is_empty(empty_arr));
+
+    au_array* non_empty_arr = au_array_create_of_length(5, sizeof(int));
+    assert(!au_array_is_empty(non_empty_arr));
 }
 
 void test_au_array_length()
