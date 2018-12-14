@@ -16,7 +16,12 @@ au_array* au_array_create()
 
 au_array* au_array_create_of_length(size_t count, size_t size)
 {
-    return NULL;
+    au_array *array = malloc(12);
+    
+    array->element_size = size;
+    array->length = count;
+    array->elements = malloc(size * count);
+    return array;
 }
 
 au_array* au_array_create_with_array(au_array *array)
