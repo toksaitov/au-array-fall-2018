@@ -78,6 +78,7 @@ void *au_array_last(au_array *array)
 
 void *au_array_get(au_array *array, size_t index)
 {
-    return NULL;
+	if (array->elements == NULL || index >= array->length) return NULL;
+    return array->elements + index * (array->element_size);
 }
 
