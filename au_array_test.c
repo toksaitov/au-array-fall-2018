@@ -80,7 +80,15 @@ void test_au_array_last()
 
 void test_au_array_get()
 {
-    assert(false);
+    au_array array;
+	array.length = 5;
+	array.element_size = 4;
+	array.elements = malloc(sizeof(int) * array.length);
+	int *a = (array.elements + (array.element_size * 2));
+	*a = 4;
+	
+	int* p = au_array_get(&array, 2);
+	assert(*p == 3);
 }
 
 int main(int argc, char **argv)
