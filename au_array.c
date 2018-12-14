@@ -1,13 +1,13 @@
 #include <stdlib.h>
 #include <assert.h>
-
 #include "au_array.h"
 
 #pragma mark - Creating Arrays
 
 au_array* au_array_create()
 {
-    au_array *array = malloc(12);
+    au_array *array = malloc(sizeof(au_array));
+    
     array->elements = NULL;
     array->element_size = 0;
     array->length = 0;
@@ -16,7 +16,7 @@ au_array* au_array_create()
 
 au_array* au_array_create_of_length(size_t count, size_t size)
 {
-    au_array *array = malloc(12);
+    au_array *array = malloc(sizeof(au_array));
     
     array->element_size = size;
     array->length = count;
