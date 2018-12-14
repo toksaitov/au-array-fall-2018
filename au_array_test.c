@@ -7,7 +7,12 @@
 
 void test_au_array_create()
 {
-    assert(false);
+     au_array* empty_arr = au_array_create();
+     
+    assert(empty_arr->length == 0);
+    assert(empty_arr->elements == NULL);
+    assert(empty_arr->element_size == 0);
+    printf("%s\n", "----- Empty arr creation passed");
 }
 
 void test_au_array_create_of_length()
