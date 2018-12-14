@@ -7,8 +7,7 @@
 
 void test_au_array_create()
 {
-     au_array* empty_arr = au_array_create();
-     
+    au_array* empty_arr = au_array_create(); 
     assert(empty_arr->length == 0);
     assert(empty_arr->elements == NULL);
     assert(empty_arr->element_size == 0);
@@ -17,7 +16,11 @@ void test_au_array_create()
 
 void test_au_array_create_of_length()
 {
-    assert(false);
+    au_array* array_of_four = au_array_create_of_length(4, sizeof(int));
+    assert(array_of_four->length == 4);
+    assert(array_of_four->element_size == sizeof(int));
+    assert(array_of_four->elements != NULL);
+    printf("%s\n", "----- Array_create_of_length passed");
 }
 
 void test_au_array_create_with_array()
