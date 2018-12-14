@@ -46,12 +46,12 @@ void au_array_free_with_element_handler(au_array *array, au_array_element_handle
 
 bool au_array_is_empty(au_array *array)
 {
-    return 0;
+    return sizeof(array->elements) == 0;
 }
 
 size_t au_array_length(au_array *array)
 {
-    return 0;
+    return array->length;
 }
 
 size_t au_array_size(au_array *array)
