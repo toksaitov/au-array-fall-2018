@@ -83,12 +83,28 @@ void test_au_array_first()
 
 void test_au_array_last()
 {
-    assert(false);
+    au_array array;
+    array.length = 2;
+    array.element_size = sizeof(int);
+    array.elements = malloc(sizeof(int) * array.length);
+    int *a = (array.elements + array.element_size);
+    *a = -1;
+    
+    int* p = au_array_last(&array);
+    assert(*p == -1);
 }
 
 void test_au_array_get()
 {
-    assert(false);
+    au_array array;
+    array.length = 5;
+    array.element_size = sizeof(int);
+    array.elements = malloc(sizeof(int) * array.length);
+    int *a = (array.elements + (array.element_size * 2));
+    *a = 3;
+	
+    int* p = au_array_get(&array, 2);
+    assert(*p == 3);
 }
 
 int main(int argc, char **argv)
