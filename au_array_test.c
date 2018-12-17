@@ -92,6 +92,7 @@ void test_au_array_get()
 
 int main(int argc, char **argv)
 {
+
     // test_au_array_create();
     // test_au_array_create_of_length();
     // test_au_array_create_with_array();
@@ -109,7 +110,6 @@ int main(int argc, char **argv)
     test_au_array_first();
     // test_au_array_last();
     // test_au_array_get();
-
     return 0;
 }
 

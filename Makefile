@@ -1,4 +1,3 @@
-CC = gcc
 CFLAGS  += -std=gnu99
 LDFLAGS +=
 
@@ -13,4 +12,3 @@ $(OBJECTS) : %.o : %.c
 .PHONY : clean
 clean :
 	rm -rf $(TARGET) $(OBJECTS)
-
