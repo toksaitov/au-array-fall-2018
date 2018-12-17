@@ -57,7 +57,11 @@ void test_au_array_size()
 
 void test_au_array_element_size()
 {
-    assert(false);
+	au_array array;
+	array.element_size = 10;
+	int a = au_array_element_size(&array);
+    assert(a == 10);
+
 }
 
 void test_au_array_first()
