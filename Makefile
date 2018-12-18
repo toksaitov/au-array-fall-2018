@@ -12,4 +12,3 @@ $(OBJECTS) : %.o : %.c
 .PHONY : clean
 clean :
 	rm -rf $(TARGET) $(OBJECTS)
-	
