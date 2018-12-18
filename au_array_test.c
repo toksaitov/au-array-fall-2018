@@ -68,7 +68,13 @@ void test_au_array_length()
 
 void test_au_array_size()
 {
-    assert(false);
+    au_array array;
+    array.element_size = sizeof(int);
+    array.length = 50;
+    array.elements = malloc(sizeof(int) * array.length);
+
+    assert(au_array_size(&array) == (50 * sizeof(int)));
+    printf("Test array size passed\n");   
 }
 
 void test_au_array_element_size()
@@ -78,7 +84,16 @@ void test_au_array_element_size()
 
 void test_au_array_first()
 {
-    assert(false);
+     au_array array;
+    array.element_size = sizeof(int);
+    array.length = 5;
+    array.elements = malloc(sizeof(int) * array.length);
+    int *a = array.elements;
+    *a = 1;
+
+    int *n = au_array_first(&array);
+    assert(*n == 1);
+    printf("Get first element of array passed\n");
 }
 
 void test_au_array_last()
