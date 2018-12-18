@@ -25,7 +25,12 @@ void test_au_array_create_of_length()
 
 void test_au_array_create_with_array()
 {
-    assert(false);
+    au_array* array = au_array_create_of_length(4, sizeof(int));
+    au_array* array2 = au_array_create_with_array(array);
+    assert(array2->length == array->length);
+    assert(array2->element_size == array->element_size);
+    assert(array2->elements == array->elements);
+    printf("%s\n", "----- Au_array_create_with_array passed");
 }
 
 void test_au_array_create_with_buffer()
@@ -36,8 +41,10 @@ void test_au_array_create_with_buffer()
 void test_au_array_free()
 {
     au_array *array = au_array_create_of_length(10, sizeof(int));
-    assert(array);
+    au_array *array2 = array;
     au_array_free(array);
+    assert(array == array2);
+    printf("%s\n", "----- Au_array_free passed");
 }
 
 void test_au_array_free_with_elements()
