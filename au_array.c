@@ -12,7 +12,12 @@ au_array* au_array_create()
 
 au_array* au_array_create_of_length(size_t count, size_t size)
 {
-    return NULL;
+    au_array *array = malloc(sizeof(au_array));
+    
+    array->element_size = size;
+    array->length = count;
+    array->elements = malloc(size * count);
+    return array;
 }
 
 au_array* au_array_create_with_array(au_array *array)
@@ -29,12 +34,14 @@ au_array* au_array_create_with_buffer(void *buffer, size_t count, size_t size)
 
 void au_array_free(au_array *array)
 {
-
+    if (array) {
+        free(array);
+    }
 }
 
 void au_array_free_with_elements(au_array *array)
 {
-
+    return NULL;
 }
 
 void au_array_free_with_element_handler(au_array *array, au_array_element_handler handler)

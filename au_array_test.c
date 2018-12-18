@@ -27,7 +27,9 @@ void test_au_array_create_with_buffer()
 
 void test_au_array_free()
 {
-    assert(false);
+    au_array *array = au_array_create_of_length(10, sizeof(int));
+    assert(array);
+    au_array_free(array);
 }
 
 void test_au_array_free_with_elements()
