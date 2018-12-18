@@ -26,7 +26,12 @@ au_array* au_array_create_of_length(size_t count, size_t size)
 
 au_array* au_array_create_with_array(au_array *array)
 {
-    return NULL;
+    au_array *copy_array = malloc(sizeof(au_array));
+
+    copy_array->length = array->length;
+    copy_array->element_size = array->element_size;
+    copy_array->elements = array->elements;
+    return copy_array;
 }
 
 au_array* au_array_create_with_buffer(void *buffer, size_t count, size_t size)
@@ -38,7 +43,9 @@ au_array* au_array_create_with_buffer(void *buffer, size_t count, size_t size)
 
 void au_array_free(au_array *array)
 {
-
+    if (array) {
+        free(array);
+    }
 }
 
 void au_array_free_with_elements(au_array *array)
