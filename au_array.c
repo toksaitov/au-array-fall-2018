@@ -70,7 +70,7 @@ size_t au_array_size(au_array *array)
 
 size_t au_array_element_size(au_array *array)
 {
-    return 0;
+    return array->element_size;
 }
 
 #pragma mark - Querying an Array
