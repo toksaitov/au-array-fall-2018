@@ -7,7 +7,7 @@
 
 void test_au_array_create()
 {
-    au_array* empty_arr = au_array_create(); 
+    au_array* empty_arr = au_array_create();
     assert(empty_arr->length == 0);
     assert(empty_arr->elements == NULL);
     assert(empty_arr->element_size == 0);
@@ -25,17 +25,30 @@ void test_au_array_create_of_length()
 
 void test_au_array_create_with_array()
 {
-    assert(false);
+  au_array* array_for_copy = au_array_create_with_array(array_for_copy);
+  assert(array_for_copy->length == sizeof(int));
+  assert(array_for_copy->element_size == 100);
+  assert(array_for_copy->elements != NULL);
+
+  printf("%s\n", "----- test_au_array_create_with_array passed ");
+
 }
 
 void test_au_array_create_with_buffer()
 {
-    assert(false);
+    // assert(false);
 }
 
 void test_au_array_free()
 {
-    assert(false);
+  au_array* array_to_be_free;
+  au_array_free(array_to_be_free);
+
+
+  assert(array_to_be_free->length == 0);
+
+  printf("%s\n", "----- Array  disallocation passed");
+
 }
 
 void test_au_array_free_with_elements()
@@ -113,4 +126,3 @@ int main(int argc, char **argv)
 
     return 0;
 }
-
