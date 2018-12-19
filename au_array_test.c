@@ -36,12 +36,19 @@ void test_au_array_create_with_array()
 
 void test_au_array_create_with_buffer()
 {
-    assert(false);
+    // assert(false);
 }
 
 void test_au_array_free()
 {
-    assert(false);
+  au_array* array_to_be_free;
+  au_array_free(array_to_be_free);
+
+
+  assert(array_to_be_free->length == 0);
+
+  printf("%s\n", "----- Array  disallocation passed");
+
 }
 
 void test_au_array_free_with_elements()
