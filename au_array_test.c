@@ -68,7 +68,10 @@ void test_au_array_length()
 
 void test_au_array_size()
 {
-    assert(false);
+    au_array* non_empty_arr = au_array_create_of_length(5, sizeof(int));
+	assert(au_array_size(non_empty_arr) == (5 * sizeof(int)));
+	
+	printf("%s\n", "----- Get the size of the array passed");
 }
 
 void test_au_array_element_size()
