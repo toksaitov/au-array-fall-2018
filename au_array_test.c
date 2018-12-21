@@ -35,7 +35,9 @@ void test_au_array_create_with_buffer()
 
 void test_au_array_free()
 {
-    assert(false);
+	au_array *array = au_array_create_of_length(1, sizeof(char));
+	assert(array);
+	au_array_free(array);
 }
 
 void test_au_array_free_with_elements()
@@ -68,7 +70,8 @@ void test_au_array_length()
 
 void test_au_array_size()
 {
-    assert(false);
+	au_array *array = au_array_create_of_length(1, sizeof(char));
+	assert(au_array_size(array) == sizeof(char));
 }
 
 void test_au_array_element_size()

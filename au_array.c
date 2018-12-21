@@ -38,7 +38,8 @@ au_array* au_array_create_with_buffer(void *buffer, size_t count, size_t size)
 
 void au_array_free(au_array *array)
 {
-
+	if array() 
+		free(array);
 }
 
 void au_array_free_with_elements(au_array *array)
@@ -65,7 +66,7 @@ size_t au_array_length(au_array *array)
 
 size_t au_array_size(au_array *array)
 {
-    return 0;
+	return array->length * array->element_size;
 }
 
 size_t au_array_element_size(au_array *array)
