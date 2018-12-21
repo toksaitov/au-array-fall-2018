@@ -101,10 +101,10 @@ int main(int argc, char **argv)
 {
     test_au_array_create();
     test_au_array_create_of_length();
-    //test_au_array_create_with_array();
-    //test_au_array_create_with_buffer();
+    test_au_array_create_with_array();
+    test_au_array_create_with_buffer();
 
-    //test_au_array_free();
+    test_au_array_free();
     test_au_array_free_with_elements();
     test_au_array_free_with_element_handler();
 
