@@ -26,6 +26,12 @@ void test_au_array_create_of_length()
 void test_au_array_create_with_array()
 {
     assert(false);
+    au_array* array_for_copy = au_array_create_with_array(array_for_copy);
+    assert(array_for_copy->length == sizeof(int));
+    assert(array_for_copy->element_size == 100);
+    assert(array_for_copy->elements != NULL);
+    printf("%s\n", "----- test_au_array_create_with_array passed ");
+
 }
 
 void test_au_array_create_with_buffer()
