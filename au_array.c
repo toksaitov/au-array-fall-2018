@@ -49,7 +49,7 @@ au_array* au_array_create_with_buffer(void *buffer, size_t count, size_t size)
 
 void au_array_free(au_array *array)
 {
-
+    free(array);
 }
 
 void au_array_free_with_elements(au_array *array)
