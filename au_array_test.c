@@ -40,7 +40,9 @@ void test_au_array_free()
 
 void test_au_array_free_with_elements()
 {
-    assert(false);
+    au_array *array = au_array_create_of_length(5, sizeof(int));
+    assert(au_array_free(array));
+    printf("%s\n", "----- au_array_free_with_elements passed");
 }
 
 void test_au_array_free_with_element_handler()
