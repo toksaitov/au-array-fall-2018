@@ -44,7 +44,7 @@ void au_array_free(au_array *array)
 void au_array_free_with_elements(au_array *array)
 {
     for (int i = 0; i < au_array_length(array); i++) {
-        free(array[i]);
+        free(array + (i * sizeof(int)));
     }
 }
 
